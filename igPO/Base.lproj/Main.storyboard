@@ -50,7 +50,7 @@
                                                     <constraint firstAttribute="width" constant="91" id="YTB-f4-klh"/>
                                                 </constraints>
                                                 <connections>
-                                                    <segue destination="E6X-9u-UeY" kind="presentation" id="j4B-cy-Ahn"/>
+                                                    <action selector="logoButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zbS-h4-O2x"/>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="500" placeholderIntrinsicHeight="1500" axis="vertical" distribution="equalSpacing" alignment="top" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="sOS-wM-map" userLabel="Stack Main">
@@ -587,6 +587,53 @@
                                     <constraint firstItem="7rA-ru-ONr" firstAttribute="top" secondItem="K4w-wd-Ag0" secondAttribute="top" id="mbp-WK-3hg"/>
                                 </constraints>
                             </scrollView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rwz-xC-fqj">
+                                <rect key="frame" x="-500" y="362" width="400" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Z6-aR-tii">
+                                        <rect key="frame" x="67" y="145" width="267" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Yvk-uF-4k2">
+                                        <rect key="frame" x="67" y="80" width="267" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utilisateur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tRt-G9-S0L">
+                                        <rect key="frame" x="67" y="51" width="900" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5qi-Ri-tUX">
+                                        <rect key="frame" x="67" y="116" width="900" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KkG-N0-9Sj">
+                                        <rect key="frame" x="152" y="229" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.73166546440000002" green="0.80156249999999996" blue="0.46355753199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Vérifiez">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="motDePasseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="geh-l6-SB8"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.74730603448275867" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ViewMotDePasse"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57975206069999996" blue="0.6755928457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -602,10 +649,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ViewMotDePasse" destination="rwz-xC-fqj" id="LjS-0o-isA"/>
+                        <outlet property="aLabel" destination="5qi-Ri-tUX" id="o1N-GG-HMf"/>
                         <outlet property="amis" destination="tIU-mj-W7p" id="0Wq-LJ-lky"/>
                         <outlet property="autres" destination="JUg-UW-x6z" id="fVd-3B-3X9"/>
                         <outlet property="email" destination="pTU-u3-Gko" id="GZt-D8-eY7"/>
                         <outlet property="journaux" destination="gGf-of-4K4" id="7pH-zB-gqD"/>
+                        <outlet property="motDePasseField" destination="3Z6-aR-tii" id="w7j-5m-XsG"/>
                         <outlet property="moteur" destination="8gj-8y-L8o" id="h01-VE-TMr"/>
                         <outlet property="name" destination="UuB-NS-5qH" id="ylj-9O-pBN"/>
                         <outlet property="phone" destination="htQ-Bm-AWk" id="f2r-Ci-c0e"/>
@@ -613,6 +663,9 @@
                         <outlet property="radio" destination="bub-vW-oof" id="C5e-qU-fEh"/>
                         <outlet property="sociaux" destination="BZu-ce-H0d" id="2md-uo-Mh6"/>
                         <outlet property="tv" destination="7gw-hj-e4Y" id="MuL-bd-vnX"/>
+                        <outlet property="utilisateurField" destination="Yvk-uF-4k2" id="76M-mI-P4b"/>
+                        <outlet property="utilisateurLabel" destination="tRt-G9-S0L" id="JSr-RN-ir2"/>
+                        <segue destination="E6X-9u-UeY" kind="presentation" identifier="seg" id="IRL-Qy-fh1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -978,6 +1031,6 @@
         <image name="save.gif" width="519" height="333"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="j4B-cy-Ahn"/>
+        <segue reference="IRL-Qy-fh1"/>
     </inferredMetricsTieBreakers>
 </document>

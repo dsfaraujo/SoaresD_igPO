@@ -46,6 +46,8 @@ class ViewController: UIViewController
         jsonManager.importJSON()
         
         fillUpArray()
+        
+         motDePasseField.isSecureTextEntry = true
     }
     /* ---------------------------------------*/
     func fillUpArray()
@@ -55,6 +57,68 @@ class ViewController: UIViewController
             arrForButtonManagement.append(false)
         }
     }
+    @IBOutlet var ViewMotDePasse: UIView!
+    /* ---------------------------------------*/
+    @IBAction func logoButton(_ sender: UIButton) {
+        ViewMotDePasse.frame.origin.x = (UIScreen.main.bounds.width - 400)/2
+    }
+    
+    var defaults = UserDefaults.standard
+    var motDePasseAdmin: String!
+    var utilisateurAdmin: String!
+
+    @IBOutlet weak var aLabel: UILabel!
+    @IBOutlet weak var motDePasseField: UITextField!
+    @IBOutlet weak var utilisateurLabel: UILabel!
+    @IBOutlet weak var utilisateurField: UITextField!
+    
+    @IBAction func motDePasseButton(_ sender: UIButton) {
+        if defaults.object(forKey: "PASSWORD") == nil {
+            defaults.set(motDePasseField.text, forKey: "PASSWORD")
+            defaults.set(utilisateurField.text, forKey: "USER")
+            setLabelButton()
+        }
+        else{
+            utilisateurAdmin = defaults.object(forKey: "USER") as! String
+            motDePasseAdmin = defaults.object(forKey: "PASSWORD") as! String
+
+print(utilisateurAdmin)
+print(motDePasseAdmin)
+
+            if utilisateurAdmin == utilisateurField.text! && motDePasseAdmin == motDePasseField.text!{
+                performSegue(withIdentifier: "seg", sender: nil)
+                
+            }
+            else{
+                let alertController = UIAlertController(title: "Mot de passe ou utilisateur incorrect", message:"Réessayez", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Abandonner", style: UIAlertActionStyle.default,handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+
+    }
+    /* ---------------------------------------*/
+
+    
+    private func setLabelButton(){
+        if defaults.object(forKey: "PASSWORD") == nil{
+            aLabel.text = "Créez une mot de passe"
+            utilisateurLabel.text = "Créez un nom d'utilisateur"
+            
+        }
+        else{
+            utilisateurLabel.text = "Nom d'utilisateur"
+            aLabel.text = "Mot de passe"
+            motDePasseField.text = ""
+            utilisateurField.text = ""
+           
+        }
+    }
+
+    
+    
+    
     /* ---------------------------------------*/
     func manageSelectedPrograms() -> String
     {
