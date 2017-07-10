@@ -65,7 +65,7 @@ class EntriesController: UIViewController
             theTextView.text = "INTÉRESSÉ PAR LES PROGRAMMES : \n\(self.progs[indexPath.row])"
         }
         
-        cell.textLabel?.textColor = UIColor.white
+        cell.textLabel?.textColor = UIColor.black
         cell.backgroundColor = UIColor.clear
         
         return cell
