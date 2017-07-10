@@ -1,6 +1,7 @@
 //=================================
 import UIKit
 //=================================
+//Classe Controlle de la page CSV
 class CSVController: UIViewController
 {
     @IBOutlet weak var cvsTextView: UITextView!
@@ -9,12 +10,15 @@ class CSVController: UIViewController
     var listOfSelectedPrograms: [Int] = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
     var listOfMedias: [Int] = [0, 0, 0, 0, 0, 0, 0, 0]
     /* ---------------------------------------*/
+    //Fonction que demarre la vue CSV
     override func viewDidLoad()
     {
         super.viewDidLoad()
         
         self.jsonManager.importJSON()
         self.cvsTextView.text = self.jsonManager.converJsonToCsv("NOM,TÉLÉPHONE,COURRIEL,COMMENT,PROGRAMMES")
+        motDePasseField.isSecureTextEntry = true
+
     }
     /* ---------------------------------------*/
     override func didReceiveMemoryWarning()
@@ -22,6 +26,7 @@ class CSVController: UIViewController
         super.didReceiveMemoryWarning()
     }
     /* ---------------------------------------*/
+    //fonction que filtre les données montrées dans la page
     @IBAction func buttonsForFiltering(_ sender: UIButton)
     {
         var strToDisplay = ""
@@ -46,6 +51,7 @@ class CSVController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    //fonction que filtre les données montrées dans la page avec les programmes selectionnées
     @IBAction func programInterests(_ sender: UIButton)
     {
         self.listOfSelectedPrograms = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
@@ -87,6 +93,7 @@ class CSVController: UIViewController
         self.cvsTextView.text = s
     }
     /* ---------------------------------------*/
+    //fonction que filtre les données montrées dans la page pour les médias le plus efficientes
     func mostEfficientMedia()
     {
         self.listOfMedias = [0, 0, 0, 0, 0, 0, 0, 0]
@@ -125,9 +132,10 @@ class CSVController: UIViewController
     }
     /* ---------------------------------------*/
     @IBOutlet weak var ViewMotDePasse: UIView!
+    /* ---------------------------------------*/
+    //fonction que reset les données dans la page 
     @IBAction func reset(_ sender: UIButton)
     {
-        
         
         let refreshAlert = UIAlertController(title: "Réinialisation", message: "Vous voulez vraiment tout réinitialiser?", preferredStyle: UIAlertControllerStyle.alert)
         
@@ -137,10 +145,10 @@ class CSVController: UIViewController
         
         refreshAlert.addAction(UIAlertAction(title: "Non", style: .default, handler: { (action: UIAlertAction!) in
         }))
-        
         present(refreshAlert, animated: true, completion: nil)
     }
     /* ---------------------------------------*/
+    //Fonction pour initializer les données dans JSON et PHP
     func reallyDoReset()
     {
         self.jsonManager.upload("delete=reset", urlForAdding: "http://www.igweb.tv/ig_po/php/delete.php")
@@ -148,14 +156,14 @@ class CSVController: UIViewController
         self.jsonManager = JsonManager(urlToJsonFile: "http://www.igweb.tv/ig_po/json/data.json")
     }
     /* ---------------------------------------*/
-    
     var defaults = UserDefaults.standard
-    
+    /* ---------------------------------------*/
     @IBOutlet weak var utilisateurLabel: UILabel!
     @IBOutlet weak var utilisateurField: UITextField!
     @IBOutlet weak var aLabel: UILabel!
     @IBOutlet weak var motDePasseField: UITextField!
-    
+    /* ---------------------------------------*/
+    //Fonction que demande la mot de passe d'administrateur pour reinitializer les informations de la page CSV
     @IBAction func motDePasseButton(_ sender: UIButton) {
         if defaults.object(forKey: "PASSWORD") == nil {
             defaults.set(motDePasseField.text, forKey: "PASSWORD")
@@ -177,9 +185,9 @@ class CSVController: UIViewController
                 self.present(alertController, animated: true, completion: nil)
             }
         }
-
     }
     /* ---------------------------------------*/
+    //fonction que 
     private func setLabelButton(){
         if defaults.object(forKey: "PASSWORD") == nil{
             aLabel.text = "Créez une mot de passe"
@@ -194,8 +202,6 @@ class CSVController: UIViewController
             
         }
     }
-    
-
     /* ---------------------------------------*/
     
 }
