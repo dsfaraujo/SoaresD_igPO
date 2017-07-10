@@ -1,6 +1,10 @@
 //=================================
 import UIKit
 //=================================
+
+var motDePasseAdmin: String!
+var utilisateurAdmin: String!
+
 class ViewController: UIViewController
 {
     /* ---------------------------------------*/
@@ -62,16 +66,14 @@ class ViewController: UIViewController
     @IBAction func logoButton(_ sender: UIButton) {
         ViewMotDePasse.frame.origin.x = (UIScreen.main.bounds.width - 400)/2
     }
-    
+    /* ---------------------------------------*/
     var defaults = UserDefaults.standard
-    var motDePasseAdmin: String!
-    var utilisateurAdmin: String!
-
+    /* ---------------------------------------*/
     @IBOutlet weak var aLabel: UILabel!
     @IBOutlet weak var motDePasseField: UITextField!
     @IBOutlet weak var utilisateurLabel: UILabel!
     @IBOutlet weak var utilisateurField: UITextField!
-    
+    /* ---------------------------------------*/
     @IBAction func motDePasseButton(_ sender: UIButton) {
         if defaults.object(forKey: "PASSWORD") == nil {
             defaults.set(motDePasseField.text, forKey: "PASSWORD")
@@ -81,9 +83,6 @@ class ViewController: UIViewController
         else{
             utilisateurAdmin = defaults.object(forKey: "USER") as! String
             motDePasseAdmin = defaults.object(forKey: "PASSWORD") as! String
-
-print(utilisateurAdmin)
-print(motDePasseAdmin)
 
             if utilisateurAdmin == utilisateurField.text! && motDePasseAdmin == motDePasseField.text!{
                 performSegue(withIdentifier: "seg", sender: nil)
@@ -99,26 +98,18 @@ print(motDePasseAdmin)
 
     }
     /* ---------------------------------------*/
-
-    
     private func setLabelButton(){
         if defaults.object(forKey: "PASSWORD") == nil{
             aLabel.text = "Créez une mot de passe"
             utilisateurLabel.text = "Créez un nom d'utilisateur"
-            
         }
         else{
             utilisateurLabel.text = "Nom d'utilisateur"
             aLabel.text = "Mot de passe"
             motDePasseField.text = ""
             utilisateurField.text = ""
-           
         }
     }
-
-    
-    
-    
     /* ---------------------------------------*/
     func manageSelectedPrograms() -> String
     {

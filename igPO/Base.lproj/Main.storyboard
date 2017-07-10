@@ -31,8 +31,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Image" translatesAutoresizingMaskIntoConstraints="NO" id="WhA-7x-Tng">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WhA-7x-Tng">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                                <color key="backgroundColor" red="0.47843137254901963" green="0.49019607843137253" blue="0.39215686274509803" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="K4w-wd-Ag0">
                                 <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
@@ -588,7 +589,7 @@
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rwz-xC-fqj">
-                                <rect key="frame" x="-500" y="362" width="400" height="300"/>
+                                <rect key="frame" x="-800" y="362" width="400" height="300"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3Z6-aR-tii">
@@ -635,7 +636,6 @@
                                 <accessibility key="accessibilityConfiguration" identifier="ViewMotDePasse"/>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.0" green="0.57975206069999996" blue="0.6755928457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="K4w-wd-Ag0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="0vS-DA-xNz"/>
                             <constraint firstItem="WhA-7x-Tng" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="3mx-A8-HD5"/>
@@ -976,6 +976,54 @@
                                     <constraint firstAttribute="width" constant="110" id="zed-cV-H1O"/>
                                 </constraints>
                             </imageView>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KaY-hI-G1M">
+                                <rect key="frame" x="-800" y="362" width="400" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UEn-zP-HtE">
+                                        <rect key="frame" x="67" y="145" width="267" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8gT-Vx-HVO">
+                                        <rect key="frame" x="67" y="80" width="267" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Utilisateur" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rtI-N2-9lz">
+                                        <rect key="frame" x="67" y="51" width="900" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Mot de passe" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ybs-If-LFv">
+                                        <rect key="frame" x="67" y="116" width="900" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q3z-aU-Nq2">
+                                        <rect key="frame" x="152" y="229" width="97" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" red="0.73166546440000002" green="0.80156249999999996" blue="0.46355753199999999" alpha="1" colorSpace="calibratedRGB"/>
+                                        <state key="normal" title="Vérifiez">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="motDePasseButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FqU-uk-tmA"/>
+                                            <action selector="motDePasseButton:" destination="fEO-y0-p40" eventType="touchUpInside" id="cFQ-a8-KXw"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.74730603449999999" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ViewMotDePasse"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57975206069999996" blue="0.6755928457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1015,7 +1063,12 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="ViewMotDePasse" destination="KaY-hI-G1M" id="bHz-LL-S07"/>
+                        <outlet property="aLabel" destination="ybs-If-LFv" id="Sw2-HX-TZC"/>
                         <outlet property="cvsTextView" destination="QuK-t9-Wdg" id="i5X-wl-WDM"/>
+                        <outlet property="motDePasseField" destination="UEn-zP-HtE" id="shf-aj-6y8"/>
+                        <outlet property="utilisateurField" destination="8gT-Vx-HVO" id="37b-u6-cqk"/>
+                        <outlet property="utilisateurLabel" destination="rtI-N2-9lz" id="Z9G-ne-kfP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoN-Cf-ar0" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1024,7 +1077,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Image" width="600" height="600"/>
         <image name="bg.png" width="1536" height="2048"/>
         <image name="case.png" width="96" height="96"/>
         <image name="logo2.png" width="226" height="185"/>

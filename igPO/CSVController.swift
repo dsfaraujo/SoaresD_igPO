@@ -124,13 +124,16 @@ class CSVController: UIViewController
         self.cvsTextView.text = s
     }
     /* ---------------------------------------*/
+    @IBOutlet weak var ViewMotDePasse: UIView!
     @IBAction func reset(_ sender: UIButton)
     {
+        
+        
         let refreshAlert = UIAlertController(title: "Réinialisation", message: "Vous voulez vraiment tout réinitialiser?", preferredStyle: UIAlertControllerStyle.alert)
         
         refreshAlert.addAction(UIAlertAction(title: "Oui", style: .default, handler: { (action: UIAlertAction!) in
-            self.reallyDoReset()
-        }))
+            self.ViewMotDePasse.frame.origin.x = (UIScreen.main.bounds.width - 400)/2
+            }))
         
         refreshAlert.addAction(UIAlertAction(title: "Non", style: .default, handler: { (action: UIAlertAction!) in
         }))
@@ -145,6 +148,56 @@ class CSVController: UIViewController
         self.jsonManager = JsonManager(urlToJsonFile: "http://www.igweb.tv/ig_po/json/data.json")
     }
     /* ---------------------------------------*/
+    
+    var defaults = UserDefaults.standard
+    
+    @IBOutlet weak var utilisateurLabel: UILabel!
+    @IBOutlet weak var utilisateurField: UITextField!
+    @IBOutlet weak var aLabel: UILabel!
+    @IBOutlet weak var motDePasseField: UITextField!
+    
+    @IBAction func motDePasseButton(_ sender: UIButton) {
+        if defaults.object(forKey: "PASSWORD") == nil {
+            defaults.set(motDePasseField.text, forKey: "PASSWORD")
+            defaults.set(utilisateurField.text, forKey: "USER")
+            setLabelButton()
+        }
+        else{
+            utilisateurAdmin = defaults.object(forKey: "USER") as! String
+            motDePasseAdmin = defaults.object(forKey: "PASSWORD") as! String
+            
+            if utilisateurAdmin == utilisateurField.text! && motDePasseAdmin == motDePasseField.text!{
+                self.reallyDoReset()
+                self.ViewMotDePasse.frame.origin.x = -800
+            }
+            else{
+                let alertController = UIAlertController(title: "Mot de passe ou utilisateur incorrect", message:"Réessayez", preferredStyle: UIAlertControllerStyle.alert)
+                alertController.addAction(UIAlertAction(title: "Abandonner", style: UIAlertActionStyle.default,handler: nil))
+                
+                self.present(alertController, animated: true, completion: nil)
+            }
+        }
+
+    }
+    /* ---------------------------------------*/
+    private func setLabelButton(){
+        if defaults.object(forKey: "PASSWORD") == nil{
+            aLabel.text = "Créez une mot de passe"
+            utilisateurLabel.text = "Créez un nom d'utilisateur"
+            
+        }
+        else{
+            utilisateurLabel.text = "Nom d'utilisateur"
+            aLabel.text = "Mot de passe"
+            motDePasseField.text = ""
+            utilisateurField.text = ""
+            
+        }
+    }
+    
+
+    /* ---------------------------------------*/
+    
 }
 //=================================
 
