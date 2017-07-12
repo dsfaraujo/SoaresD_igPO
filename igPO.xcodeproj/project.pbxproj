@@ -31,6 +31,7 @@
 		07A503F71CB2FE3900E56CDF /* 167.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A503ED1CB2FE3900E56CDF /* 167.png */; };
 		07A503F81CB2FE3900E56CDF /* 180.png in Resources */ = {isa = PBXBuildFile; fileRef = 07A503EE1CB2FE3900E56CDF /* 180.png */; };
 		07A503FA1CB317ED00E56CDF /* CSVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A503F91CB317ED00E56CDF /* CSVController.swift */; };
+		9B78ADB41F16826100B3F4C6 /* info.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B78ADB31F16826100B3F4C6 /* info.gif */; };
 		9B9182E91F0A873400FF2885 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B9182E81F0A873400FF2885 /* bg.png */; };
 		9B9182EB1F0A88C700FF2885 /* logo2.png in Resources */ = {isa = PBXBuildFile; fileRef = 9B9182EA1F0A88C700FF2885 /* logo2.png */; };
 		9B9182EE1F0A9ACF00FF2885 /* save.gif in Resources */ = {isa = PBXBuildFile; fileRef = 9B9182EC1F0A9ACF00FF2885 /* save.gif */; };
@@ -64,6 +65,7 @@
 		07A503ED1CB2FE3900E56CDF /* 167.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 167.png; path = Images/167.png; sourceTree = "<group>"; };
 		07A503EE1CB2FE3900E56CDF /* 180.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = 180.png; path = Images/180.png; sourceTree = "<group>"; };
 		07A503F91CB317ED00E56CDF /* CSVController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CSVController.swift; sourceTree = "<group>"; };
+		9B78ADB31F16826100B3F4C6 /* info.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = info.gif; path = Images/info.gif; sourceTree = "<group>"; };
 		9B9182E81F0A873400FF2885 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = Images/bg.png; sourceTree = "<group>"; };
 		9B9182EA1F0A88C700FF2885 /* logo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = logo2.png; path = Images/logo2.png; sourceTree = "<group>"; };
 		9B9182EC1F0A9ACF00FF2885 /* save.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; name = save.gif; path = Images/save.gif; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		07040CEC1CAD935300AA29C6 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				9B78ADB31F16826100B3F4C6 /* info.gif */,
 				9B9182EC1F0A9ACF00FF2885 /* save.gif */,
 				9B9182ED1F0A9ACF00FF2885 /* save2.png */,
 				9B9182EA1F0A88C700FF2885 /* logo2.png */,
@@ -225,6 +228,7 @@
 				076A07AC1CAEBE9400865DE8 /* cordia.ttf in Resources */,
 				07A503F61CB2FE3900E56CDF /* 152.png in Resources */,
 				07040CE01CAD916400AA29C6 /* Assets.xcassets in Resources */,
+				9B78ADB41F16826100B3F4C6 /* info.gif in Resources */,
 				07A503F71CB2FE3900E56CDF /* 167.png in Resources */,
 				07A503F11CB2FE3900E56CDF /* 58.png in Resources */,
 				076A07AD1CAEBE9400865DE8 /* cordiab.ttf in Resources */,

@@ -736,14 +736,14 @@
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="204" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OiF-Z0-36t">
+                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" tag="204" contentMode="scaleAspectFit" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="OiF-Z0-36t">
                                                     <rect key="frame" x="4" y="112" width="672" height="53"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="52.5" id="fRx-ZP-2Ng"/>
                                                     </constraints>
                                                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                    <fontDescription key="fontDescription" name="CordiaNew" family="Cordia New" pointSize="23"/>
+                                                    <fontDescription key="fontDescription" name="CordiaNew" family="Cordia New" pointSize="21"/>
                                                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                                 </textView>
                                             </subviews>
@@ -787,13 +787,14 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fe-ar-aJd">
-                                <rect key="frame" x="648" y="974" width="80" height="30"/>
+                                <rect key="frame" x="549" y="972" width="179" height="32"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="80" id="J12-xQ-Azb"/>
-                                    <constraint firstAttribute="height" constant="30" id="dOB-Re-Mxi"/>
+                                    <constraint firstAttribute="width" constant="179" id="J12-xQ-Azb"/>
+                                    <constraint firstAttribute="height" constant="32" id="dOB-Re-Mxi"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="26"/>
-                                <state key="normal" title="CSV">
+                                <state key="normal" title="ADMINISTRATEUR">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -869,7 +870,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="oqV-Yf-Zqq"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
                                 <state key="normal" title="TÉLÉPHONES">
                                     <color key="titleColor" red="0.22354509019999999" green="0.24230769229999999" blue="0.014401429550000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -883,7 +884,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="oXU-Kb-KxN"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
                                 <state key="normal" title="MÉDIAS">
                                     <color key="titleColor" red="0.22354509019999999" green="0.24230769229999999" blue="0.014401429550000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -905,7 +906,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="756-tB-ufp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
                                 <state key="normal" title="NOMS">
                                     <color key="titleColor" red="0.22354509019999999" green="0.24230769229999999" blue="0.014401429550000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -919,7 +920,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="0uz-8A-auu"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
                                 <state key="normal" title="COURRIELS">
                                     <color key="titleColor" red="0.22354509019999999" green="0.24230769229999999" blue="0.014401429550000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -933,7 +934,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="ltp-LJ-wPP"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
                                 <state key="normal" title="PARTICIPANTS">
                                     <color key="titleColor" red="0.22354509019999999" green="0.24230769229999999" blue="0.014401429550000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -947,7 +948,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="UWn-pa-Q0i"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
                                 <state key="normal" title="RÉINITIALISER">
                                     <color key="titleColor" red="0.22354509019999999" green="0.24230769229999999" blue="0.014401429550000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -961,7 +962,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="anv-G5-3im"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="18"/>
+                                <fontDescription key="fontDescription" name="CordiaNew-Bold" family="Cordia New" pointSize="22"/>
                                 <state key="normal" title="PROGRAMMES">
                                     <color key="titleColor" red="0.22354509019999999" green="0.24230769229999999" blue="0.014401429550000001" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
@@ -1024,6 +1025,14 @@
                                 <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.74730603449999999" colorSpace="calibratedRGB"/>
                                 <accessibility key="accessibilityConfiguration" identifier="ViewMotDePasse"/>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G1Y-Y0-v6b">
+                                <rect key="frame" x="705" y="49" width="22" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57975206069999996" blue="0.6755928457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1071,6 +1080,49 @@
                         <outlet property="utilisateurLabel" destination="rtI-N2-9lz" id="Z9G-ne-kfP"/>
                     </connections>
                 </viewController>
+                <view contentMode="scaleToFill" id="HZ2-8l-1eQ">
+                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <subviews>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="7Oy-hb-cYw">
+                            <rect key="frame" x="20" y="39" width="360" height="83"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">  La page Administrateur c'est une page crée pour vous aider à faire l'administration des données que contient dans la base de données du programme Portes Ouvertes de l'Institut Grasset. </string>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="1wF-hg-8im">
+                            <rect key="frame" x="20" y="109" width="360" height="67"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <string key="text">  Dans cette page, vous pouvez selectionner les informations pour les sauvegarder dans une fichier externe ou les envoyer par email. </string>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="  Ainsi, en bas de la page vous pouvez trier les informations à partir des options selectionées par les élèves inscripts. " textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="aqB-Cl-XiC">
+                            <rect key="frame" x="20" y="172" width="211" height="99"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
+                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="info.gif" translatesAutoresizingMaskIntoConstraints="NO" id="fF5-R5-O5R">
+                            <rect key="frame" x="111" y="172" width="289" height="218"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        </imageView>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyr-HY-PhB">
+                            <rect key="frame" x="349" y="8" width="31" height="23"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                            <state key="normal" title="x">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.74730603449999999" colorSpace="calibratedRGB"/>
+                    <accessibility key="accessibilityConfiguration" identifier="ViewMotDePasse"/>
+                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoN-Cf-ar0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1565.625" y="265.4296875"/>
@@ -1079,6 +1131,7 @@
     <resources>
         <image name="bg.png" width="1536" height="2048"/>
         <image name="case.png" width="96" height="96"/>
+        <image name="info.gif" width="452" height="362"/>
         <image name="logo2.png" width="226" height="185"/>
         <image name="save.gif" width="519" height="333"/>
     </resources>

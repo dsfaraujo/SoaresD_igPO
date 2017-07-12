@@ -133,7 +133,7 @@ class CSVController: UIViewController
     /* ---------------------------------------*/
     @IBOutlet weak var ViewMotDePasse: UIView!
     /* ---------------------------------------*/
-    //fonction que reset les données dans la page 
+    //fonction que reset les données dans la page
     @IBAction func reset(_ sender: UIButton)
     {
         
