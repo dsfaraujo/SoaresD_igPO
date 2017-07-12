@@ -204,6 +204,16 @@ class CSVController: UIViewController
     }
     /* ---------------------------------------*/
     
+    @IBOutlet weak var viewInfo: UIView!
+    @IBAction func buttonInfo(_ sender: UIButton) {
+        viewInfo.frame.origin.x = (UIScreen.main.bounds.width - 400)/2
+    
+    }
+    
+    @IBAction func buttonSortieInfo(_ sender: UIButton) {
+        viewInfo.frame.origin.x = -800
+    }
+    
 }
 //=================================
 

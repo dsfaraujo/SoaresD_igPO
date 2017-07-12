@@ -1032,7 +1032,57 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buttonInfo:" destination="fEO-y0-p40" eventType="touchUpInside" id="TVB-vf-TcI"/>
+                                </connections>
                             </button>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HZ2-8l-1eQ">
+                                <rect key="frame" x="-800" y="312" width="448" height="448"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="7Oy-hb-cYw">
+                                        <rect key="frame" x="18" y="20" width="413" height="83"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">  La page Administrateur c'est une page crée pour vous aider à faire l'administration des données que contient dans la base de données du programme Portes Ouvertes de l'Institut Grasset. </string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="  Ainsi, en bas de la page vous pouvez trier les informations à partir des options selectionées par les élèves inscripts. " textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="aqB-Cl-XiC">
+                                        <rect key="frame" x="20" y="158" width="208" height="110"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="info.gif" translatesAutoresizingMaskIntoConstraints="NO" id="fF5-R5-O5R">
+                                        <rect key="frame" x="34" y="162" width="406" height="278"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    </imageView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="1wF-hg-8im">
+                                        <rect key="frame" x="20" y="99" width="413" height="67"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <string key="text">  Dans cette page, vous pouvez selectionner les informations pour les sauvegarder dans une fichier externe ou les envoyer par email. </string>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyr-HY-PhB">
+                                        <rect key="frame" x="429" y="8" width="11" height="11"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="x">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="buttonSortieInfo:" destination="fEO-y0-p40" eventType="touchUpInside" id="RFt-qH-GvT"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.74730603449999999" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" identifier="ViewMotDePasse"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.57975206069999996" blue="0.6755928457" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -1078,51 +1128,9 @@
                         <outlet property="motDePasseField" destination="UEn-zP-HtE" id="shf-aj-6y8"/>
                         <outlet property="utilisateurField" destination="8gT-Vx-HVO" id="37b-u6-cqk"/>
                         <outlet property="utilisateurLabel" destination="rtI-N2-9lz" id="Z9G-ne-kfP"/>
+                        <outlet property="viewInfo" destination="HZ2-8l-1eQ" id="iBf-EC-7kY"/>
                     </connections>
                 </viewController>
-                <view contentMode="scaleToFill" id="HZ2-8l-1eQ">
-                    <rect key="frame" x="0.0" y="0.0" width="400" height="400"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <subviews>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="7Oy-hb-cYw">
-                            <rect key="frame" x="20" y="39" width="360" height="83"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">  La page Administrateur c'est une page crée pour vous aider à faire l'administration des données que contient dans la base de données du programme Portes Ouvertes de l'Institut Grasset. </string>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="1wF-hg-8im">
-                            <rect key="frame" x="20" y="109" width="360" height="67"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <string key="text">  Dans cette page, vous pouvez selectionner les informations pour les sauvegarder dans une fichier externe ou les envoyer par email. </string>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="  Ainsi, en bas de la page vous pouvez trier les informations à partir des options selectionées par les élèves inscripts. " textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="aqB-Cl-XiC">
-                            <rect key="frame" x="20" y="172" width="211" height="99"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="info.gif" translatesAutoresizingMaskIntoConstraints="NO" id="fF5-R5-O5R">
-                            <rect key="frame" x="111" y="172" width="289" height="218"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        </imageView>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fyr-HY-PhB">
-                            <rect key="frame" x="349" y="8" width="31" height="23"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                            <state key="normal" title="x">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </state>
-                        </button>
-                    </subviews>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.74730603449999999" colorSpace="calibratedRGB"/>
-                    <accessibility key="accessibilityConfiguration" identifier="ViewMotDePasse"/>
-                </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VoN-Cf-ar0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1565.625" y="265.4296875"/>
