@@ -1,11 +1,13 @@
 //=================================
 import UIKit
 //=================================
+//classe de la doisièmme page de l'application
 class EntriesController: UIViewController
 {
     /* ---------------------------------------*/
     //let jsonManager = JsonManager(urlToJsonFile: "http://localhost/xampp/geneau/ig_po/json/data.json")
     let jsonManager = JsonManager(urlToJsonFile: "http://www.igweb.tv/ig_po/json/data.json")
+    //variables pour ramplir la tableview
     var names: [String] = []
     var phones: [String] = []
     var emails: [String] = []
@@ -13,10 +15,11 @@ class EntriesController: UIViewController
     var progs: [String] = []
     @IBOutlet weak var theTableView: UITableView!
     /* ---------------------------------------*/
+    //fonction que demarre la page
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
+        //prendre le fichier json enregistrée avec les données d'inscription ramplis par les étudiants
         self.jsonManager.importJSON()
         self.names = self.jsonManager.returnKeys()
         self.phones = self.jsonManager.returnValues(0)
@@ -25,17 +28,20 @@ class EntriesController: UIViewController
         self.progs = self.jsonManager.returnValues(3)
     }
     /* ---------------------------------------*/
+    //constructeur
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
     }
     /* ---------------------------------------*/
+    //fonction qui compte le nombre des rangées de ta tableview
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         tableView.backgroundColor = UIColor.clear
         return self.names.count
     }
     /* ---------------------------------------*/
+     //fonction qui fait la ramplissage de la table view et retourne chaque celule avec ses elements
     func tableView(_ tableView: UITableView, cellForRowAtIndexPath indexPath: IndexPath) -> UITableViewCell
     {
         let cell:UITableViewCell = (self.theTableView.dequeueReusableCell(withIdentifier: "po")! as UITableViewCell)
@@ -71,12 +77,14 @@ class EntriesController: UIViewController
         return cell
     }
     /* ---------------------------------------*/
+    //fonction pour la selection des celules dans la table
     func tableView(_ tableView: UITableView, didSelectRowAtIndexPath indexPath: IndexPath)
     {
         let selectedCell:UITableViewCell = tableView.cellForRow(at: indexPath)!
         selectedCell.contentView.backgroundColor = UIColor.lightGray
     }
     /* ---------------------------------------*/
+    //fonction qu'efface des celules dans la table et dans le fichier php
     func tableView(_ tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: IndexPath)
     {
         if editingStyle == UITableViewCellEditingStyle.delete

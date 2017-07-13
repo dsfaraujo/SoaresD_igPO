@@ -21,6 +21,7 @@ class CSVController: UIViewController
 
     }
     /* ---------------------------------------*/
+    //constructeur
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
@@ -56,6 +57,7 @@ class CSVController: UIViewController
     {
         self.listOfSelectedPrograms = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 
+        //liste de programmes
         let arrProgramNames: [String] = [
             "DEC - Techniques de production et postproduction télévisuelles (574.AB)",
             "AEC - Production télévisuelle et cinématographique (NWY.15)",
@@ -69,7 +71,7 @@ class CSVController: UIViewController
             "AEC - Techniques d’inspection en bâtiment (EEC.13)",
             "AEC - Métré pour l’estimation en construction (EEC.00)",
             "AEC - Sécurité industrielle et commerciale (LCA.5Q)"]
-        
+        //prendre les données dans json
         for index in 0 ..< arrProgramNames.count
         {
             let s = ". \(arrProgramNames[index])"
@@ -187,7 +189,7 @@ class CSVController: UIViewController
         }
     }
     /* ---------------------------------------*/
-    //fonction que 
+    //fonction que set le title dans la page de view mot de passe
     private func setLabelButton(){
         if defaults.object(forKey: "PASSWORD") == nil{
             aLabel.text = "Créez une mot de passe"
@@ -203,17 +205,22 @@ class CSVController: UIViewController
         }
     }
     /* ---------------------------------------*/
-    
     @IBOutlet weak var viewInfo: UIView!
+    //button qui apelle la view d'info
     @IBAction func buttonInfo(_ sender: UIButton) {
         viewInfo.frame.origin.x = (UIScreen.main.bounds.width - 400)/2
     
     }
-    
+    /* ---------------------------------------*/
+    //button que sort de la view info
     @IBAction func buttonSortieInfo(_ sender: UIButton) {
         viewInfo.frame.origin.x = -800
     }
-    
+    /* ---------------------------------------*/
+    //button que sort de la view mot de passe
+    @IBAction func sortieMotPasse(_ sender: UIButton) {
+        ViewMotDePasse.frame.origin.x = -800
+    }
 }
 //=================================
 

@@ -1,14 +1,14 @@
 //=================================
 import UIKit
 //=================================
-
+//variables globales
 var motDePasseAdmin: String!
 var utilisateurAdmin: String!
 
+//classe pour la page principal de l'application
 class ViewController: UIViewController
 {
     /* ---------------------------------------*/
-    
     @IBOutlet weak var name: UITextField!
     @IBOutlet weak var phone: UITextField!
     @IBOutlet weak var email: UITextField!
@@ -25,6 +25,7 @@ class ViewController: UIViewController
     var arrMediaButtons:[UIButton]!
     /* ---------------------------------------*/
     var arrForButtonManagement: [Bool] = []
+    //liste des programmes pour l'isncription
     let arrProgramNames: [String] = [
         "DEC - Techniques de production et postproduction télévisuelles (574.AB)",
         "AEC - Production télévisuelle et cinématographique (NWY.15)",
@@ -38,22 +39,24 @@ class ViewController: UIViewController
         "AEC - Techniques d’inspection en bâtiment (EEC.13)",
         "AEC - Métré pour l’estimation en construction (EEC.00)",
         "AEC - Sécurité industrielle et commerciale (LCA.5Q)"]
+    //lien vers le fichier json
     //let jsonManager = JsonManager(urlToJsonFile: "http://localhost/xampp/geneau/ig_po/json/data.json")
     let jsonManager = JsonManager(urlToJsonFile: "http://www.igweb.tv/ig_po/json/data.json")
     /* ---------------------------------------*/
+    //fonction pour demarer la page
     override func viewDidLoad()
     {
         super.viewDidLoad()
-        
         arrMediaButtons = [amis, radio, pub_internet, journaux, moteur, sociaux, tv, autres]
-        
+        //importer json
         jsonManager.importJSON()
-        
+        //ramplir la liste
         fillUpArray()
-        
-         motDePasseField.isSecureTextEntry = true
+        //mor de passe avec des chiffres securitaires
+        motDePasseField.isSecureTextEntry = true
     }
     /* ---------------------------------------*/
+    //fonction pour ramplir la liste dans la page
     func fillUpArray()
     {
         for _ in 0...11
@@ -61,10 +64,17 @@ class ViewController: UIViewController
             arrForButtonManagement.append(false)
         }
     }
+    
     @IBOutlet var ViewMotDePasse: UIView!
     /* ---------------------------------------*/
+    //view pour rentrer la fenetre mot de passe
     @IBAction func logoButton(_ sender: UIButton) {
         ViewMotDePasse.frame.origin.x = (UIScreen.main.bounds.width - 400)/2
+    }
+    //si cliquez dans le bouton x, l'alerte sort de la page
+    @IBAction func sortieAlerteMotPasse(_ sender: UIButton) {
+        ViewMotDePasse.frame.origin.x = -800
+        
     }
     /* ---------------------------------------*/
     var defaults = UserDefaults.standard
@@ -74,6 +84,8 @@ class ViewController: UIViewController
     @IBOutlet weak var utilisateurLabel: UILabel!
     @IBOutlet weak var utilisateurField: UITextField!
     /* ---------------------------------------*/
+    //button pour valider la mot de passe et rentrer dans la page administrateur
+    //utilisateur: "Grasset" * mot de passe: "admin"
     @IBAction func motDePasseButton(_ sender: UIButton) {
         if defaults.object(forKey: "PASSWORD") == nil {
             defaults.set(motDePasseField.text, forKey: "PASSWORD")
@@ -98,6 +110,7 @@ class ViewController: UIViewController
 
     }
     /* ---------------------------------------*/
+    //si la mot de passe n'est pas encore crée, la fonction setLabelButton le permetre de faire
     private func setLabelButton(){
         if defaults.object(forKey: "PASSWORD") == nil{
             aLabel.text = "Créez une mot de passe"
@@ -111,6 +124,7 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    // fonction que selectionne les programmes rentrées pour ajouter dans la base de données
     func manageSelectedPrograms() -> String
     {
         var stringToReturn: String = ". "
@@ -123,7 +137,7 @@ class ViewController: UIViewController
             }
         }
         
-        // Delete 3 last characters of string...
+        // Effacez 3 dernier characters de la string...
         if stringToReturn != ""
         {
             stringToReturn = stringToReturn.substring(to: stringToReturn.characters.index(before: stringToReturn.endIndex))
@@ -134,11 +148,13 @@ class ViewController: UIViewController
         return stringToReturn
     }
     /* ---------------------------------------*/
+    //constructeur
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()
     }
     /* ---------------------------------------*/
+    //button pour choisit les option des programmes
     @IBAction func buttonManager(_ sender: UIButton)
     {
         let buttonIndexInArray = sender.tag - 100
@@ -155,6 +171,7 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    //si le button est deselectionnée
     func deselectAllButtons()
     {
         for x in 0 ..< arrForButtonManagement.count
@@ -165,6 +182,7 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    //sauvegarder les informations rentrées par l'étudiant
     @IBAction func saveInformation(_ sender: UIButton)
     {
         if name.text == "" || phone.text == "" || email.text == ""
@@ -191,6 +209,7 @@ class ViewController: UIViewController
         alert("Les données ont été sauvegardées...")
     }
     /* ---------------------------------------*/
+    //si le button sauvegarder est appuyez, l'alerte s'affiche
     func alert(_ theMessage: String)
     {
         let refreshAlert = UIAlertController(title: "Message...", message: theMessage, preferredStyle: .alert)
@@ -199,6 +218,7 @@ class ViewController: UIViewController
         present(refreshAlert, animated: true){}
     }
     /* ---------------------------------------*/
+    //clear des champs d'inscription
     func clearFields()
     {
         name.text = ""
@@ -206,12 +226,14 @@ class ViewController: UIViewController
         email.text = ""
     }
     /* ---------------------------------------*/
+    //verifier les champs ramplis
     func textFieldShouldReturn(_ textField: UITextField!) -> Bool
     {
         textField.resignFirstResponder()
         return true
     }
     /* ---------------------------------------*/
+    //buttons des médias "comment l'etudiant a entendu parler des portes ouvertes"
     @IBAction func mediaButtons(_ sender: UIButton)
     {
         resetAllMediaButtonAlphas()
@@ -228,6 +250,7 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    //désélectionner les médias
     func resetAllMediaButtonAlphas()
     {
         for index in 0 ..< arrMediaButtons.count
@@ -236,6 +259,7 @@ class ViewController: UIViewController
         }
     }
     /* ---------------------------------------*/
+    //verifier les medias selectionnées
     func checkMediaSelection() -> Bool
     {
         var chosen = false

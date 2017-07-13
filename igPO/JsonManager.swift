@@ -1,28 +1,33 @@
 /*==================================*/
 import Foundation
 /*==================================*/
+//classe lien entre le projet et le ficier json
 class JsonManager
 {
     /* ------------------------------------- */
     var jsonParsed:NSMutableDictionary = [:]
     var urlToJsonFile: String = ""
     /* ------------------------------------- */
+    //initialisation du fichier json
     init(urlToJsonFile: String)
     {
         self.urlToJsonFile = urlToJsonFile
     }
     /* ------------------------------------- */
+    //fonction pour parse le json
     func parser(_ jsonFilePath: String) -> NSMutableDictionary
     {
         let data = try! Data(contentsOf: URL(string: jsonFilePath)!)
         return try! JSONSerialization.jsonObject(with: data, options:JSONSerialization.ReadingOptions.mutableContainers) as! NSMutableDictionary
     }
     /* ------------------------------------- */
+    //fonction qui doit importer le ficher json
     func importJSON()
     {
         self.jsonParsed = self.parser(self.urlToJsonFile)
     }
     /* ------------------------------------- */
+    //fonctio qui fait l'upload du fichier json
     func upload(_ stringToSend: String, urlForAdding: String)
     {
         let url:URL = URL(string: urlForAdding)!
@@ -48,6 +53,7 @@ class JsonManager
         
         task.resume()
     }
+    //fonction qui retourne les valeurs du fichier json
     /* ------------------------------------- */
     func returnValues(_ dataIndex: Int) -> [String]
     {
@@ -60,6 +66,7 @@ class JsonManager
         
         return arrayForData
     }
+    //fonction qui retourne les clés du fichier json
     /* ------------------------------------- */
     func returnKeys() -> [String]
     {
@@ -73,6 +80,7 @@ class JsonManager
         return arrayForData
     }
     /* ------------------------------------- */
+    //fonction qui fait la conversion du fichier json par le csv
     func converJsonToCsv(_ fieldNamesSeperatedByComas: String) -> String
     {
         var CSV: String = "\(fieldNamesSeperatedByComas)\n"
@@ -99,6 +107,7 @@ class JsonManager
         return CSV.substring(to: CSV.characters.index(before: CSV.endIndex))
     }
     /* ------------------------------------- */
+    //fonction qui fait le filtre des valeurs du fichier json pour montrer dans l'application
     func filter(_ index: Int, title: String) -> String
     {
         var strToDisplay = "\(title) :\n"
