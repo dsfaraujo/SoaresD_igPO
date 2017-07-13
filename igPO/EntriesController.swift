@@ -28,7 +28,6 @@ class EntriesController: UIViewController
         self.progs = self.jsonManager.returnValues(3)
     }
     /* ---------------------------------------*/
-    //constructeur
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()

@@ -148,7 +148,6 @@ class ViewController: UIViewController
         return stringToReturn
     }
     /* ---------------------------------------*/
-    //constructeur
     override func didReceiveMemoryWarning()
     {
         super.didReceiveMemoryWarning()

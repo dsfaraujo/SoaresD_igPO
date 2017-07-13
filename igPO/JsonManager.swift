@@ -27,7 +27,7 @@ class JsonManager
         self.jsonParsed = self.parser(self.urlToJsonFile)
     }
     /* ------------------------------------- */
-    //fonctio qui fait l'upload du fichier json
+    //fonction qui fait l'upload du fichier json
     func upload(_ stringToSend: String, urlForAdding: String)
     {
         let url:URL = URL(string: urlForAdding)!
